@@ -1,0 +1,2 @@
+*.wdx filter=lfs diff=lfs merge=lfs -text
+*.mx filter=lfs diff=lfs merge=lfs -text
