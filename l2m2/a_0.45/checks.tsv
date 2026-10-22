@@ -1,0 +1,49 @@
+check	error	uncertainty	tolerance	result
+D: threshold eigencondition at the root, continued fraction of depth 2 nCF (relative to β0/α0)	0	0	1.e-65	PASS
+D: Leaver series converged, |a_N|/|a_0|	9.991465609525556e-76	0	1.e-65	PASS
+D: bound state, μ > ω (error = ω/μ - 1 + 1/2; must be < 1/2)	0.49677181465045966	0	0.5	PASS
+f: Chebyshev panel interpolation of f and its first three r-derivatives vs the Leaver series (10 off-node points)	1.0100424083156393e-50	0	1.e-25	PASS
+D: ground state (number of radial nodes of f on [r+, r+ + xMax])	0	0	0.5	PASS
+S: sin^m P(χ) (polynomial) vs SpinWeightedSpheroidalHarmonicS (7 points, relative to max|S|; overall sign free)	0	0	1.e-15	PASS
+E4: angular quadrature converged (nChi vs nChi + 16) at r = 3	0	0	1.e-12	PASS
+E4: angular quadrature converged (nChi vs nChi + 16) at r = 12	0	0	1.e-12	PASS
+E4: angular quadrature converged (nChi vs nChi + 16) at r = 45	0	0	1.e-12	PASS
+E4: Σ_{ℓ≤lmax} T_ℓ Y_ℓ + (ℓ > lmax remainder) = calT at 6 off-grid points	0	0	1.e-9	PASS
+G1: radial Teukolsky equation at all panel nodes, all modes (|residual_ℓ| / max_ℓ Σ|terms| per node)	2.6930409637834765e-26	0	1.e-6	PASS
+R: radial resolution of the Ψ4 modes (last panel Chebyshev coefficient / largest, all modes)	1.3456093293510978e-31	0	1.e-12	PASS
+G3: O4 Ψ4 = S4T + (ℓ > lmax remainder) at 15 off-grid points	0	0	1.e-9	PASS
+4c: I2, I3 panels vs NIntegrate of ∫(r'-r)g, (1/2)∫(r'-r)^2 g (ℓ = 2, 3; r = r+ + 0.1, 8)	8.479194792470681e-30	0	1.e-15	PASS
+4c: T4[h_mbarmbar] = Ψ4 at 21 off-grid points (r+ + 10^-3 .. 10^5)	0	0	1.e-12	PASS
+5: integrals converged: share of K1, K2, K3 from r > r+ + xMax	3.366200951775593e-87	0	1.e-40	PASS
+5: h_mmbar panels vs NIntegrate of the Green formula (r = r+ + 0.1, 4, 30; χ = 0.21)	2.2137941903995327e-26	0	1.e-15	PASS
+5: E_nn[h_mmbar] = T_nn at 18 off-grid points	1.3581329192069356e-51	0	1.e-12	PASS
+opt: CSE-optimized E_ab coefficients = plain ones on the χ grid at r = 3 (relative)	0	0	1.e-40	PASS
+cloud: Klein-Gordon residual |□Φ/Φ - μ^2|/μ^2 at 12 points (the floor of the Einstein equations not solved directly)	1.8373128844798875e-51	0	1.e-25	PASS
+11: h_lmbar grid + interpolation vs direct NIntegrate of the Green formula at (r, χ) = (1.993028555, 0.21)	0	0	1.e-14	PASS
+11: h_lmbar grid + interpolation vs direct NIntegrate of the Green formula at (r, χ) = (2.5, 0.21)	0	0	1.e-14	PASS
+11: h_lmbar grid + interpolation vs direct NIntegrate of the Green formula at (r, χ) = (7., 0.21)	0	0	1.e-14	PASS
+11: h_lmbar grid + interpolation vs direct NIntegrate of the Green formula at (r, χ) = (4.e1, 0.21)	0	0	1.e-14	PASS
+11: J1, J2 integrands decay faster than 1/r at r = rFar = max(10^6, 100 rMax) (convergent at infinity)	-1.0000034328582148	0	0	PASS
+11: χ resolution of h_lmbar/sinθ and h_ll	0	0	1.e-15	PASS
+11: radial panel resolution of h_lmbar and h_ll	6.2547772068202955e-49	0	1.e-15	PASS
+11: residual table is finite (no Indeterminate / ComplexInfinity from precision loss)	0	0	0.5	PASS
+11: solved equations E_nn, E_nmbar, E_ln = T on all test panels (incl. r > rMax; value + significance-arithmetic uncertainty)	5.110816478028154e-31	0	1.e-12	PASS
+11: E_mbarmbar residual non-increasing with ℓ_cut (test panels with r < 4; up to 1%, the KG floor of section 13 may be reached)	2.3522801212408058	0	1.01	FAIL
+completion: J_cloud/E_cloud = m/ω (single mode on shell; tests the threshold ω = m Ω_H)	1.	0	1.e-40	FAIL
+completion: no radial flux of energy and angular momentum (stationary, conserved, no flux into H+)	4.153837236804851e-55	0	1.e-40	PASS
+completion: E_cloud from the panels = NIntegrate over r+ .. rMax (independent quadrature)	0	0	1.e-20	PASS
+completion: h_ORG carries no ADM mass or angular momentum (all tetrad components fall off faster than r^-2)	-1.0000010099351049	0	0	PASS
+completion: background inputs rewritten without Conjugate/Abs/Re/Im, equal to the originals (numerically, 2 points)	0	0	1.e-25	PASS
+completion: conjugate pairs are consistent after the rewrite (ρbar = flip(ρ), ρbar' = flip(ρ'), τbar' = flip(τ'), Ψ2bar)	0	0	1.e-25	PASS
+completion: ρ° solves Eq. (D1) (and its conjugate) and is a clean expression (no unsolved symbols)	0	0	1.e-25	PASS
+completion: ρ°, Ψ'°, τ'° are Held scalars (þ' annihilates them; ρ° from Eq. (D1))	0	0	1.e-25	PASS
+completion: d°_ll (type {3,3}) and d°_lmbar (type {2,4}) are Held scalars (þ' annihilates them)	0	0	1.e-25	PASS
+completion: the ER zero modes are clean explicit functions of (r, χ) (no Conjugate/Abs/Derivative, no unsolved symbols)	0	0	0.5	PASS
+completion: the ER zero modes equal their closed forms (2r/Σ; i√2 M r sinθ/(r - iaχ)^3; -2Mar(1+χ^2)/Σ^2)	0	0	1.e-25	PASS
+completion: δG_ab = 0 for the ER zero modes (vacuum, ORG by construction)	0	0	1.e-25	PASS
+completion: Komar charges of the Kerr derivatives = (1, a) and (0, 1) (validates the Komar integral)	2.0000000000000003e-40	0	1.e-20	PASS
+completion: Komar charges of the ER zero modes are independent of r (vacuum)	4.000000000000001e-40	0	1.e-20	PASS
+completion: ER zero modes carry the charges of linearized Kerr up to an overall sign s = ±1: Komar = s {(1, a), (0, 1)}	2.0000000000000003e-40	0	1.e-20	PASS
+completion: ER zero modes have the correct sign (s = +1): d°_ll = -Ψ'° δM/M, d°_lmbar = -(τ'° Ψ'°/(2 ρbar°)) δa/a	0	0	0.5	PASS
+completion: Komar-fixed coefficients = s (δM, δa)	0	0	1.e-20	PASS
+completion: cloud mass A2 E_cloud = BOSON_CLOUDMASS	0	0	1.e-50	PASS

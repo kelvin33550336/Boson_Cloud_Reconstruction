@@ -1,0 +1,50 @@
+section	step	seconds
+0. setup	(whole section)	7.36
+1. Kerr background: ingoing coordinates, tetrad, spin coefficients, GHP operators	(whole section)	1.08
+2. Scalar cloud at the threshold of the given spin: Leaver / Dolan solver for the mass μ	(whole section)	46.49
+3. Compact T_ab, Teukolsky operator O4 and source S4T	(whole section)	9.
+4. Numerical parameters, Chebyshev utilities, radial and angular functions of the cloud	(whole section)	83.84
+5. Source on the χ grid and projection onto _{-2}Y_{ℓ0} (approach 1)	(whole section)	433.36
+6. Homogeneous solutions, radial panels, Green-function solution	(whole section)	32.49
+7. Checks of the particular solution Ψ4	(whole section)	194.34
+8. Export of Ψ4 and T_ab (Psi4_Tab_cloud.mx)	(whole section)	0.55
+9. Reconstruction operators T4 (h_mbarmbar) and E_nn (h_mmbar)	(whole section)	0.1
+10. h_mbarmbar from Ψ4	(whole section)	237.94
+11. h_mmbar from T_nn	(whole section)	46.88
+12. Linearized Einstein operator in the traceful ORG	(whole section)	1.9100000000000001
+13. Full stress-energy tensor and Klein-Gordon residual of the cloud	(whole section)	0.23
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	(whole section)	455.42
+15. h_ll interpolation and values	(whole section)	2.57
+16. Error monitoring for h_lmbar and h_ll; all ten Einstein equations	(whole section)	233.58
+16b. Completion: energy and angular momentum of the cloud, linearized Kerr perturbation (δM, δJ)	(whole section)	48.54
+17. Export h_ORG_cloud.mx and summary	(whole section)	237.55
+2. Scalar cloud at the threshold of the given spin: Leaver / Dolan solver for the mass μ	mass: bracketing scan (71 points, one per job)	2.12
+2. Scalar cloud at the threshold of the given spin: Leaver / Dolan solver for the mass μ	mass: Brent root (scan depth)	6.96
+2. Scalar cloud at the threshold of the given spin: Leaver / Dolan solver for the mass μ	Leaver series: Miller recursion until |a_n| < 10^-(wp+10) (depths nCF x 2^k, k = 0..3, one per job, while nCF < 2e6; else serial doubling)	1.53
+2. Scalar cloud at the threshold of the given spin: Leaver / Dolan solver for the mass μ	mass: secant root at depth 512000 (from the scan-depth root)	27.8
+2. Scalar cloud at the threshold of the given spin: Leaver / Dolan solver for the mass μ	Leaver series coefficients (Miller, depth 512000)	3.25
+3. Compact T_ab, Teukolsky operator O4 and source S4T	S4T (the two halves of S4op) and the unseparated O4 (symbolic, one per job)	8.98
+4. Numerical parameters, Chebyshev utilities, radial and angular functions of the cloud	f-jets from the Leaver series at the panel nodes (one panel per job)	77.22
+5. Source on the χ grid and projection onto _{-2}Y_{ℓ0} (approach 1)	CSE-optimized numeric calT and S4T (one per job)	0.06
+6. Homogeneous solutions, radial panels, Green-function solution	source table TlP (one panel per job)	4.15
+6. Homogeneous solutions, radial panels, Green-function solution	Green-function solves: R_in, R_up on the panel nodes (jobs ℓ x panel set) and the assembly (one ℓ per job)	22.37
+10. h_mbarmbar from Ψ4	g_ℓ and the repeated integrals I1, I2, I3 of all modes (one ℓ per job)	9.07
+11. h_mmbar from T_nn	tails of the τ integrals beyond xMax (NIntegrate of the Leaver series; 3 moments x 8 sub-intervals, one per job)	39.79
+12. Linearized Einstein operator in the traceful ORG	CSE-optimized E_ab coefficient functions (one (component, function) per job)	0.02
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	_{-2}Y_ℓ0, ∂_χ, ∂_χ^2 at the χ nodes (exact evaluation, one node per job)	0.16
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	mode values on the outer nodes (closed form, one node per job)	0.19
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	operator functions on the outer nodes (one node per job)	1.18
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	node data on the owning subkernels: mode values, τ, f, operator functions	7.55
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	phase 1: sources F_nmbar, F_ln and the J1, J2 panel pieces (owning subkernels)	124.49000000000001
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	J1, J2: outer panels and carries (master; outer integrals one per job)	3.75
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	phase 2: h_lmbar, its χ-jets, F_ln and the J_ll panel pieces (owning subkernels)	224.03
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	J_ll: outer panels and carries (master; outer integrals one per job)	1.42
+14. h_lmbar from the nmbar Einstein equation (grids, node data, pipeline)	phase 3: J_ll, h_ll (owning subkernels); node values to the master	62.97
+16. Error monitoring for h_lmbar and h_ll; all ten Einstein equations	Einstein residuals on the test panels (jets: one (panel, solution) per job; residuals: one node per job)	32.84
+16. Error monitoring for h_lmbar and h_ll; all ten Einstein equations	diagnostics: Einstein residuals of the full solution at every node of 72 inner and 4 outer panels (one node per job)	67.32000000000001
+16b. Completion: energy and angular momentum of the cloud, linearized Kerr perturbation (δM, δJ)	cloud energy and angular momentum (Chebyshev panels in r, Gauss-Legendre in χ; one panel per job)	0.79
+16b. Completion: energy and angular momentum of the cloud, linearized Kerr perturbation (δM, δJ)	primed Held scalars of the background (ER App. D) and the ER zero modes (Eq. (B1))	1.04
+16b. Completion: energy and angular momentum of the cloud, linearized Kerr perturbation (δM, δJ)	linearized Komar charges of the Kerr derivatives and of the ER zero modes	39.46
+17. Export h_ORG_cloud.mx and summary	diagnostics: h_mbarmbar, h_mmbar at all nodes and Chebyshev spectra (one panel per job)	116.11
+17. Export h_ORG_cloud.mx and summary	export boson_cloud.wdx (metric, scalar cloud, Psi4 modes, diagnostics)	117.79
+total	NA	2073.34
